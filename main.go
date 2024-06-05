@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gecko-crawl/routes"
 	"log"
 	"os"
 	"os/signal"
@@ -31,6 +32,8 @@ func main() {
 	})
 
 	app.Use(compress.New())
+
+	routes.SetRoutes(app)
 
 	// Start the server and listen
 
